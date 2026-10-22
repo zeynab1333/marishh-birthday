@@ -1,0 +1,707 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #e83286;
+  --deep-pink: #d92f82;
+  --text: #50243b;
+  --muted: #81546c;
+  --glass: rgba(255, 248, 252, 0.92);
+  --shadow: 0 18px 50px rgba(119, 37, 78, 0.13);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Baloo 2", sans-serif;
+  color: var(--text);
+  background: #ffeaf3 url("images/bc1.jpg") center / cover fixed;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, 100%);
+  margin: auto;
+  padding: 35px 25px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 45px;
+  align-items: center;
+  padding: clamp(25px, 5vw, 60px);
+  background: var(--glass);
+  border: 1px solid white;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.kicker {
+  color: var(--pink);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 6vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -1px;
+  font-weight: 800;
+  margin: 0 0 23px;
+}
+
+h1 span,
+h2 span {
+  color: var(--pink);
+}
+
+.intro {
+  max-width: 550px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 1.08rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  border: 0;
+  padding: 13px 21px;
+  border-radius: 50px;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 4px 5px 4px 0;
+  transition: 0.25s;
+}
+
+.btn:hover,
+.surprise-btn:hover,
+.mood-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(217, 47, 130, 0.18);
+}
+
+.pink {
+  color: white;
+  background: linear-gradient(135deg, #ff65a5, #d92f82);
+}
+
+.white {
+  color: var(--pink);
+  background: white;
+  border: 1px solid #f6c7dc;
+}
+
+.hint {
+  color: #a16b87;
+  font-size: 0.85rem;
+  margin-top: 18px;
+}
+
+.photo-area {
+  width: min(100%, 340px);
+  justify-self: center;
+  position: relative;
+}
+
+.photo-frame {
+  position: relative;
+  padding: 12px 12px 18px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(81, 31, 59, 0.17);
+  transform: rotate(2deg);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.photo-placeholder {
+  display: none;
+  min-height: 310px;
+  padding: 20px;
+  background: #fff0f7;
+  color: #b65b87;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-placeholder span {
+  font-size: 3rem;
+}
+
+.photo-placeholder small {
+  font-size: 0.75rem;
+}
+
+.caption {
+  text-align: center;
+  font-family: "Pacifico", cursive;
+  color: var(--pink);
+  margin-top: 20px;
+}
+
+.sticker {
+  position: absolute;
+  z-index: 2;
+  font-size: 2.5rem;
+}
+
+.bow {
+  top: -25px;
+  left: -20px;
+  transform: rotate(-15deg);
+}
+
+.heart {
+  bottom: 45px;
+  right: -20px;
+}
+
+.surprises {
+  padding: 65px 0 35px;
+  text-align: center;
+}
+
+.surprises h2,
+.reveal h2 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.section-intro {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 auto 27px;
+}
+
+.button-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.surprise-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: rgba(255, 250, 253, 0.95);
+  box-shadow: 0 8px 25px rgba(119, 37, 78, 0.08);
+  color: var(--text);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.emoji {
+  flex: 0 0 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #ffe4ef;
+  font-size: 1.5rem;
+}
+
+.button-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.button-copy strong,
+.button-copy small {
+  display: block;
+}
+
+.button-copy strong {
+  font-size: 1rem;
+}
+
+.button-copy small {
+  color: #986b81;
+  font-size: 0.82rem;
+}
+
+.arrow {
+  color: var(--pink);
+  font-size: 1.3rem;
+}
+
+.final-btn {
+  grid-column: 1 / -1;
+  background: linear-gradient(120deg, #ffe4f0, #fff9fc);
+}
+
+.reveal {
+  position: relative;
+  margin: 25px auto;
+  padding: clamp(28px, 5vw, 50px);
+  text-align: center;
+  background: var(--glass);
+  border: 1px solid white;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 20px;
+  animation: reveal 0.4s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #ffe6f0;
+  color: var(--pink);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.big-emoji {
+  font-size: 2.7rem;
+  margin: 18px 0;
+}
+
+.message {
+  max-width: 750px;
+  margin: 20px auto 25px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 25px 0;
+}
+
+.gallery figure {
+  min-width: 0;
+  margin: 0;
+  padding: 9px 9px 14px;
+  background: white;
+  box-shadow: 0 8px 22px rgba(119, 37, 78, 0.1);
+  border-radius: 8px;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.gallery figcaption {
+  font-family: "Pacifico", cursive;
+  color: var(--pink);
+  font-size: 0.82rem;
+  padding-top: 12px;
+}
+
+.image-placeholder {
+  display: none;
+  min-height: 220px;
+  background: #fff0f7;
+  color: #b65b87;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 4px;
+}
+
+.image-placeholder small {
+  font-size: 0.75rem;
+}
+
+.letter-buttons,
+.moods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin: 25px 0 18px;
+}
+
+.letter-tab,
+.mood-btn {
+  padding: 10px 15px;
+  border: 1px solid #f6c7dc;
+  border-radius: 50px;
+  background: white;
+  color: var(--pink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.letter-tab.active,
+.mood-btn.selected {
+  background: var(--pink);
+  color: white;
+}
+
+.letter-paper {
+  max-width: 750px;
+  margin: 0 auto 25px;
+  padding: 28px;
+  background: #fff9fc;
+  border: 1px dashed #f2a3c6;
+  border-radius: 10px 22px 22px;
+  text-align: left;
+}
+
+.letter-paper h3 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  color: var(--pink);
+}
+
+.letter-paper p {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.signature {
+  font-family: "Pacifico", cursive;
+  color: var(--pink) !important;
+}
+
+.mood-result {
+  max-width: 600px;
+  margin: 0 auto 22px;
+  padding: 18px;
+  background: #fff0f7;
+  border-radius: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.final-reveal {
+  border: 2px dashed #f3a0c4;
+  background: linear-gradient(140deg, #fff0f7, #fffafd);
+}
+
+.hidden {
+  display: none !important;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 10px 15px;
+  color: #986b81;
+}
+
+footer p {
+  font-family: "Pacifico", cursive;
+  color: var(--pink);
+  font-size: 1.1rem;
+}
+
+.confetti {
+  position: fixed;
+  top: -30px;
+  z-index: 999;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(700deg);
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .container {
+    padding: 15px 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 32px 22px;
+    text-align: center;
+    border-radius: 24px;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .photo-area {
+    width: min(80%, 320px);
+  }
+
+  .photo-frame img {
+    height: clamp(240px, 70vw, 330px);
+  }
+
+  .photo-placeholder {
+    min-height: 240px;
+  }
+
+  .button-list {
+    grid-template-columns: 1fr;
+  }
+
+  .final-btn {
+    grid-column: auto;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gallery img,
+  .image-placeholder {
+    height: 270px;
+  }
+
+  .surprises {
+    padding-top: 48px;
+  }
+
+  .reveal {
+    padding: 38px 18px 25px;
+  }
+
+  .letter-buttons {
+    flex-direction: column;
+  }
+
+  .letter-paper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 28px 16px;
+  }
+
+  h1 {
+    font-size: 2.55rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .surprise-btn {
+    gap: 10px;
+    padding: 13px 10px;
+  }
+
+  .emoji {
+    flex-basis: 42px;
+    height: 42px;
+  }
+
+  .button-copy strong {
+    font-size: 0.92rem;
+  }
+
+  .button-copy small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* Dreamy handwritten birthday style */
+h1,
+h2,
+h3,
+.caption,
+footer p {
+  font-family: "Dancing Script", cursive;
+  font-style: italic;
+}
+
+/* Make the main birthday heading extra pretty */
+h1 {
+  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Handwritten lettering on the cards */
+.letter-paper h3,
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+/* Keep buttons readable and playful */
+button {
+  font-family: "Baloo 2", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+/* Bolder, cuter handwritten font */
+h1,
+h2,
+h3,
+.caption,
+footer p,
+.letter-paper h3,
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Make the main birthday heading thicker */
+h1 {
+  font-weight: 700;
+  -webkit-text-stroke: 0.6px currentColor;
+}
+
+/* Give section headings more presence */
+h2 {
+  font-weight: 700;
+  -webkit-text-stroke: 0.3px currentColor;
+}
+
+/* Make handwritten letters stand out */
+.letter-paper h3,
+.signature {
+  font-weight: 700;
+}
+
+/* Keep normal text and buttons readable */
+body,
+button {
+  -webkit-text-stroke: 0;
+}
+
+
+/* Cute photo motion 🎀 */
+.photo-frame,
+.gallery figure {
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Gentle movement when hovering */
+.photo-frame:hover {
+  transform: rotate(-2deg) scale(1.035);
+  box-shadow: 0 22px 40px rgba(217, 47, 130, 0.25);
+}
+
+.gallery figure:hover {
+  transform: translateY(-7px) rotate(-1deg) scale(1.025);
+  box-shadow: 0 18px 35px rgba(217, 47, 130, 0.2);
+}
+
+/* Animation when a photo is clicked */
+.photo-frame.photo-pop {
+  animation: photoPop 0.55s ease;
+}
+
+.gallery figure.photo-pop {
+  animation: memoryPop 0.55s ease;
+}
+
+@keyframes photoPop {
+  0%   { transform: rotate(2deg) scale(1); }
+  35%  { transform: rotate(-5deg) scale(1.08); }
+  65%  { transform: rotate(4deg) scale(1.04); }
+  100% { transform: rotate(2deg) scale(1); }
+}
+
+@keyframes memoryPop {
+  0%   { transform: scale(1) rotate(0); }
+  35%  { transform: scale(1.08) rotate(-3deg); }
+  65%  { transform: scale(1.04) rotate(2deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame,
+  .gallery figure {
+    transition: none;
+  }
+
+  .photo-frame.photo-pop,
+  .gallery figure.photo-pop {
+    animation: none;
+  }
+}
+
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Marishh! 🎀</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+
+    <!-- WELCOME -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker">A little website made with love ♡</p>
+
+        <h1>Happy Birthday,<br>
+          <span>Marishh!</span>
+        </h1>
+
+        <p class="intro">
+          Today is all about celebrating YOU! You deserve happiness,
+          beautiful memories, endless laughter and all the lovely
+          things this world has to offer.
+        </p>
+
+        <button class="btn pink" data-open="gift">
+          Open Your First Gift 🎁
+        </button>
+
+        <button class="btn white" id="musicBtn">
+          ♫ Play Birthday Music
+        </button>
+
+        <p class="hint">Psst... there are more surprises waiting below ✨</p>
+      </div>
+
+      <div class="photo-area">
+        <span class="sticker bow">🎀</span>
+
+        <div class="photo-frame">
+          <img
+            src="images/marish.jpg"
+            alt="Birthday girl"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+
+          <div class="photo-placeholder">
+            <span>💗</span>
+            <p>Put the birthday girl's photo here!</p>
+            <small>images/birthday-girl.jpg</small>
+          </div>
+        </div>
+
+        <p class="caption">Our birthday princess ♡</p>
+        <span class="sticker heart">💖</span>
+      </div>
+    </section>
+
+    <!-- SURPRISE BUTTONS -->
+    <section class="surprises">
+      <p class="kicker">Choose your little adventure</p>
+      <h2>Your Surprises Are Waiting <span>♡</span></h2>
+      <p class="section-intro">
+        Every button unlocks something special. Go on, explore! 💕
+      </p>
+
+      <div class="button-list">
+        <button class="surprise-btn" data-open="gift">
+          <span class="emoji">🎁</span>
+          <span class="button-copy">
+            <strong>Gift Number One</strong>
+            <small>A birthday wish just for you</small>
+          </span>
+          <span class="arrow">↗</span>
+        </button>
+
+        <button class="surprise-btn" data-open="memories">
+          <span class="emoji">📸</span>
+          <span class="button-copy">
+            <strong>Our Little Memories</strong>
+            <small>Open your photo scrapbook</small>
+          </span>
+          <span class="arrow">↗</span>
+        </button>
+
+        <button class="surprise-btn" data-open="letters">
+          <span class="emoji">💌</span>
+          <span class="button-copy">
+            <strong>Letters From Your People</strong>
+            <small>Some words from the heart</small>
+          </span>
+          <span class="arrow">↗</span>
+        </button>
+
+        <button class="surprise-btn" data-open="game">
+          <span class="emoji">🌷</span>
+          <span class="button-copy">
+            <strong>A Tiny Birthday Game</strong>
+            <small>Choose your birthday mood</small>
+          </span>
+          <span class="arrow">↗</span>
+        </button>
+
+        <button class="surprise-btn final-btn" data-open="final">
+          <span class="emoji">✨</span>
+          <span class="button-copy">
+            <strong>The Final Surprise</strong>
+            <small>Save this one for last!</small>
+          </span>
+          <span class="arrow">↗</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- GIFT -->
+    <section class="reveal hidden" id="gift">
+      <button class="close-btn" data-close>×</button>
+      <p class="kicker">Gift unlocked 🎁</p>
+      <h2>A Wish for Your New Chapter</h2>
+      <div class="big-emoji">🎀 💗 🌷</div>
+
+      <p class="message">
+        May this new year of your life bring you peaceful mornings,
+        genuine friendships, courage to follow your dreams, and laughter
+        that makes your cheeks hurt. May you always remember how special
+        you are, even on ordinary days. You deserve a life that feels
+        beautiful from the inside out. Happy birthday, lovely girl! ♡
+      </p>
+
+      <button class="btn pink" data-open="memories">
+        Next Surprise →
+      </button>
+    </section>
+
+    <!-- MEMORIES -->
+    <section class="reveal hidden" id="memories">
+      <button class="close-btn" data-close>×</button>
+      <p class="kicker">Memory lane 📸</p>
+      <h2>Little Moments, Big Memories</h2>
+      <p class="section-intro">Our favourite moments deserve a place here.</p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/bc3.jpg" alt="Memory one"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder">📷<small>memory1.jpg</small></div>
+          <figcaption>One for the memory books ♡</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/mem.jpg" alt="Memory two"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder">🌸<small>memory2.jpg</small></div>
+          <figcaption>Smiles we'll always remember</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/marish6.jpg" alt="Memory three"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder">💗<small>memory3.jpg</small></div>
+          <figcaption>More memories to come</figcaption>
+        </figure>
+      </div>
+
+      <button class="btn pink" data-open="letters">
+        Read Your Letters 💌
+      </button>
+    </section>
+
+    <!-- LETTERS -->
+    <section class="reveal hidden" id="letters">
+      <button class="close-btn" data-close>×</button>
+      <p class="kicker">Letters from the heart 💌</p>
+      <h2>Little Notes for marishh</h2>
+
+      <div class="letter-buttons">
+        <button class="letter-tab active" data-letter="letter1">
+          From Your Besties 💗
+        </button>
+        <button class="letter-tab" data-letter="letter2">
+          A Little Reminder 🌷
+        </button>
+        <button class="letter-tab" data-letter="letter3">
+          Your New Chapter ✨
+        </button>
+      </div>
+
+      <article class="letter-paper" id="letter1">
+        <h3>To our favourite girl,</h3>
+        <p>
+          Happy birthday to someone who makes ordinary moments feel
+          special. Thank you for the laughter, the conversations, and
+          all the little memories that mean more than words can explain.
+          I hope life gives back the same kindness and joy you bring to
+          others. Keep dreaming big, keep being yourself, and never forget
+          how loved you are. Here's to more adventures together! 💕
+        </p>
+        <p class="signature">With love, your besties ♡</p>
+      </article>
+
+      <article class="letter-paper hidden" id="letter2">
+        <h3>Just a little reminder,</h3>
+        <p>
+          You don't have to have everything figured out to be doing well.
+          You are allowed to grow at your own pace, rest, and begin again.
+          I hope this year brings you people who celebrate your happiness,
+          respect your heart, and remind you of your strength. You are a
+          gift exactly as you are. 🌷
+        </p>
+        <p class="signature">Always cheering for you ♡</p>
+      </article>
+
+      <article class="letter-paper hidden" id="letter3">
+        <h3>To the girl you're becoming,</h3>
+        <p>
+          May this next chapter be full of lovely surprises, brave choices,
+          unexpected opportunities, and memories you'll tell stories about
+          for years. I hope you get closer to the dreams you've been
+          carrying and find beauty in the journey, not just the destination.
+          The best parts of your story are still being written. Happy birthday! ✨
+        </p>
+        <p class="signature">With so much love ♡</p>
+      </article>
+
+      <button class="btn pink" data-open="game">
+        One More Surprise →
+      </button>
+    </section>
+
+    <!-- BIRTHDAY GAME -->
+    <section class="reveal hidden" id="game">
+      <button class="close-btn" data-close>×</button>
+      <p class="kicker">A tiny birthday game 🌷</p>
+      <h2>Choose Your Birthday Mood</h2>
+      <p class="section-intro">What kind of magic are we wishing for you?</p>
+
+      <div class="moods">
+        <button class="mood-btn" data-mood="soft">🌷 Peace & Happiness</button>
+        <button class="mood-btn" data-mood="adventure">🦋 Big Adventures</button>
+        <button class="mood-btn" data-mood="glow">✨ Main Character Energy</button>
+      </div>
+
+      <p class="mood-result hidden" id="moodResult"></p>
+
+      <button class="btn pink" data-open="final">
+        Unlock the Last Gift ✨
+      </button>
+    </section>
+
+    <!-- FINAL SURPRISE -->
+    <section class="reveal final-reveal hidden" id="final">
+      <button class="close-btn" data-close>×</button>
+      <p class="kicker">You made it to the last gift!</p>
+      <div class="big-emoji">🎂</div>
+      <h2>One Thing I Hope You Never Forget...</h2>
+
+      <p class="message">
+        Your life is worth celebrating—not just today, but every day.
+        May you be surrounded by sincere love, find reasons to smile in
+        little things, and always feel proud of the person you are becoming.
+        Thank you for being YOU. The world is sweeter with you in it.
+        Happy birthday, princess! 💗🎀
+      </p>
+
+      <button class="btn white" id="confettiBtn">
+        Make It Rain Confetti! 🎉
+      </button>
+    </section>
+
+    <footer>
+      <p>Made with love, just for you ♡</p>
+      <span>Happy Birthday, Princess! 🎀</span>
+    </footer>
+  </main>
+
+  <audio id="birthdayMusic" loop>
+    <source src="images/birthday-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
